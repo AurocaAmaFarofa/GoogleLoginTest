@@ -1,5 +1,8 @@
 const jwt = require('jsonwebtoken')
 
+//esse midlware é executado primeiro que a rota, então sempre que colocarmos isso na rota
+//a rota vai saber se o token JWT está certo ou não.
+
 const authMiddleware = (req, res, next) => {
   const token = req.headers.authorization?.split(' ')[1]
 
